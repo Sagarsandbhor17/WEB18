@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+    #front{display:grid;grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(auto,auto);gap:20px;width:80%;margin:auto}
+        img{width:80%;display: block;margin:auto;}
+        h5+img{width:40%;display: block;margin:auto}
+        h3,h5{text-align:center}
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <div><a href="frontend.html">Frontend</a></div>
+        <div><a href="backend.html">Backend</a></div></div>
+<div id="front">
+
+</div>
+    
+</body>
+</html>
+<script>
+var out=JSON.parse(localStorage.getItem("data"));
+
+out.forEach(function(el){
+var box=document.createElement("div");
+var im=document.createElement("img");im.setAttribute("src",el.img);
+var nam=document.createElement("h3");nam.innerText=el.name;
+var rol=document.createElement("h5");rol.innerText=el.role;
+var log=document.createElement("img");log.setAttribute("src",el.logo);
+box.append(im,nam,rol,log);
+document.querySelector("#front").append(box)
+
+
+})
+
+
+
+
+
+
+</script>
